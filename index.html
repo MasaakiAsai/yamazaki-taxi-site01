@@ -1,0 +1,266 @@
+export default function YamazakiTaxiWebsite() {
+  const services = [
+    {
+      title: '空港送迎',
+      text: '羽田・成田への送迎に対応。早朝・深夜の移動も、落ち着いた車内で快適にご利用いただけます。',
+    },
+    {
+      title: '都内貸切',
+      text: 'ビジネス利用、役員送迎、通院、接待、記念日など、目的に合わせた柔軟な貸切に対応します。',
+    },
+    {
+      title: '東京観光',
+      text: '浅草・銀座・丸の内・六本木など、東京観光を効率よく。荷物が多い日やご家族での移動にも最適です。',
+    },
+  ];
+
+  const reasons = [
+    '東京個人タクシーの安心感',
+    'アルファードならではの広さと高級感',
+    '清潔で静かな車内空間',
+    'スマホから予約しやすい導線',
+    'ビジネスにも観光にも対応',
+    '丁寧で落ち着いた接客',
+  ];
+
+  const fareRows = [
+    ['一般乗車', 'メーター料金にて対応'],
+    ['羽田空港送迎', 'エリア・時間帯により変動'],
+    ['成田空港送迎', 'エリア・時間帯により変動'],
+    ['時間貸切', 'ご利用内容に応じてお見積り'],
+  ];
+
+  return (
+    <div className="min-h-screen bg-[#0f172a] text-white">
+      <header className="sticky top-0 z-50 border-b border-white/10 bg-[#0b1220]/90 backdrop-blur">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+          <div>
+            <div className="text-xs tracking-[0.25em] text-amber-300">TOKYO PRIVATE TAXI</div>
+            <div className="text-2xl font-semibold">山崎タクシー</div>
+          </div>
+          <nav className="hidden gap-6 text-sm text-white/80 md:flex">
+            <a href="#service" className="hover:text-white">サービス</a>
+            <a href="#vehicle" className="hover:text-white">車両紹介</a>
+            <a href="#fare" className="hover:text-white">料金案内</a>
+            <a href="#owner" className="hover:text-white">ご挨拶</a>
+            <a href="#contact" className="hover:text-white">予約・問い合わせ</a>
+          </nav>
+        </div>
+      </header>
+
+      <section className="relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-transparent" />
+        <div
+          className="absolute inset-0 bg-cover bg-center opacity-30"
+          style={{
+            backgroundImage:
+              "url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1600&q=80')",
+          }}
+        />
+        <div className="relative mx-auto grid min-h-[78vh] max-w-7xl items-center px-6 py-16 md:grid-cols-2">
+          <div>
+            <div className="mb-4 inline-flex rounded-full border border-amber-300/30 bg-amber-300/10 px-4 py-1 text-sm text-amber-200">
+              東京個人タクシー / アルファード対応
+            </div>
+            <h1 className="max-w-3xl text-4xl font-semibold leading-tight md:text-6xl">
+              都心の移動を、<br />
+              ひとつ上の心地よさへ。
+            </h1>
+            <p className="mt-6 max-w-xl text-base leading-8 text-white/75 md:text-lg">
+              山崎タクシーは、東京での大切な移動を上質にサポートする個人タクシーです。
+              アルファードの広さと快適性を活かし、空港送迎、ビジネス移動、観光、特別な一日まで丁寧に対応します。
+            </p>
+            <div className="mt-8 flex flex-wrap gap-4">
+              <a
+                href="#contact"
+                className="rounded-2xl bg-amber-400 px-6 py-3 text-sm font-semibold text-slate-900 shadow-lg shadow-amber-400/20 transition hover:scale-[1.02]"
+              >
+                WEB予約・お見積り
+              </a>
+              <a
+                href="tel:00000000000"
+                className="rounded-2xl border border-white/20 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
+              >
+                お電話で予約
+              </a>
+            </div>
+            <div className="mt-8 grid max-w-xl grid-cols-2 gap-4 text-sm text-white/70 md:grid-cols-3">
+              <div className="rounded-2xl border border-white/10 bg-white/5 p-4">羽田・成田送迎</div>
+              <div className="rounded-2xl border border-white/10 bg-white/5 p-4">都内貸切対応</div>
+              <div className="rounded-2xl border border-white/10 bg-white/5 p-4">観光・接待利用</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="service" className="mx-auto max-w-7xl px-6 py-20">
+        <div className="mb-12 max-w-2xl">
+          <div className="text-sm tracking-[0.2em] text-amber-300">SERVICE</div>
+          <h2 className="mt-3 text-3xl font-semibold md:text-4xl">選ばれる理由</h2>
+          <p className="mt-4 leading-8 text-white/70">
+            個人タクシーならではの柔軟さと、アルファードならではの快適さ。
+            山崎タクシーは「安心」「上質」「予約のしやすさ」を大切にしています。
+          </p>
+        </div>
+
+        <div className="grid gap-6 md:grid-cols-3">
+          {services.map((item) => (
+            <div key={item.title} className="rounded-3xl border border-white/10 bg-white/5 p-7 shadow-2xl shadow-black/20">
+              <h3 className="text-xl font-semibold text-amber-200">{item.title}</h3>
+              <p className="mt-4 leading-8 text-white/75">{item.text}</p>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-10 grid gap-4 md:grid-cols-3">
+          {reasons.map((reason) => (
+            <div key={reason} className="rounded-2xl border border-white/10 bg-[#111827] p-4 text-sm text-white/80">
+              {reason}
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section id="vehicle" className="bg-white/[0.03]">
+        <div className="mx-auto grid max-w-7xl gap-10 px-6 py-20 md:grid-cols-2">
+          <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-white/5">
+            <img
+              src="https://images.unsplash.com/photo-1549924231-f129b911e442?auto=format&fit=crop&w=1200&q=80"
+              alt="高級感のある車内イメージ"
+              className="h-full w-full object-cover"
+            />
+          </div>
+          <div className="flex flex-col justify-center">
+            <div className="text-sm tracking-[0.2em] text-amber-300">ALPHARD</div>
+            <h2 className="mt-3 text-3xl font-semibold md:text-4xl">移動時間そのものを、快適な体験へ。</h2>
+            <p className="mt-6 leading-8 text-white/75">
+              アルファードは、広々とした室内空間と上質な乗り心地が魅力です。
+              ご年配の方との移動、大きなお荷物がある日、ビジネスで印象を大切にしたい場面にも適しています。
+            </p>
+            <div className="mt-8 grid gap-4 sm:grid-cols-2">
+              <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
+                <div className="text-sm text-amber-200">車内設備</div>
+                <div className="mt-2 text-white/80">スマホ充電 / キャッシュレス対応 / 清潔な車内</div>
+              </div>
+              <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
+                <div className="text-sm text-amber-200">おもてなし</div>
+                <div className="mt-2 text-white/80">丁寧な接客 / 快適な温度管理 / 安全運転</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="fare" className="mx-auto max-w-7xl px-6 py-20">
+        <div className="mb-10 max-w-2xl">
+          <div className="text-sm tracking-[0.2em] text-amber-300">FARE</div>
+          <h2 className="mt-3 text-3xl font-semibold md:text-4xl">料金案内</h2>
+          <p className="mt-4 leading-8 text-white/70">
+            一般乗車はメーター料金、空港送迎や貸切は内容に応じてご案内します。
+            詳細なお見積りは、日時・乗車地・目的地をお知らせください。
+          </p>
+        </div>
+
+        <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-white/5">
+          <table className="w-full text-left text-sm md:text-base">
+            <thead className="bg-white/10 text-white">
+              <tr>
+                <th className="px-5 py-4 font-medium">項目</th>
+                <th className="px-5 py-4 font-medium">内容</th>
+              </tr>
+            </thead>
+            <tbody>
+              {fareRows.map(([label, detail]) => (
+                <tr key={label} className="border-t border-white/10">
+                  <td className="px-5 py-4 text-white/90">{label}</td>
+                  <td className="px-5 py-4 text-white/70">{detail}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <div className="mt-5 text-sm leading-7 text-white/55">
+          ※ 実際の料金は営業エリア・時間帯・高速料金・駐車場料金等により変動します。公開時は最新の営業条件に合わせてご確認ください。
+        </div>
+      </section>
+
+      <section id="owner" className="bg-white/[0.03]">
+        <div className="mx-auto grid max-w-7xl gap-10 px-6 py-20 md:grid-cols-[0.9fr_1.1fr]">
+          <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-white/5">
+            <div className="flex h-full min-h-[320px] items-center justify-center bg-gradient-to-br from-slate-700 to-slate-900 text-lg text-white/50">
+              オーナー写真
+            </div>
+          </div>
+          <div className="flex flex-col justify-center">
+            <div className="text-sm tracking-[0.2em] text-amber-300">OWNER</div>
+            <h2 className="mt-3 text-3xl font-semibold md:text-4xl">ご挨拶</h2>
+            <p className="mt-6 leading-8 text-white/75">
+              山崎タクシーでは、安全運転はもちろん、その先にある「安心して任せられる移動時間」を大切にしています。
+              仕事の大切な移動にも、ご家族との特別な外出にも、心地よくご利用いただける一台を目指しています。
+            </p>
+            <div className="mt-6 text-lg font-medium text-white">山崎タクシー　山崎 様</div>
+            <div className="mt-2 text-white/60">東京個人タクシー</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" className="mx-auto max-w-7xl px-6 py-20">
+        <div className="grid gap-8 md:grid-cols-[1.1fr_0.9fr]">
+          <div className="rounded-[2rem] border border-white/10 bg-white/5 p-8">
+            <div className="text-sm tracking-[0.2em] text-amber-300">CONTACT</div>
+            <h2 className="mt-3 text-3xl font-semibold md:text-4xl">予約・お問い合わせ</h2>
+            <p className="mt-4 leading-8 text-white/70">
+              スマホから簡単に予約できます。日時、乗車地、目的地、人数を送るだけで、お見積りやご案内が可能です。
+            </p>
+
+            <form className="mt-8 grid gap-4">
+              <input className="rounded-2xl border border-white/10 bg-[#0b1220] px-4 py-3 outline-none placeholder:text-white/30" placeholder="お名前" />
+              <input className="rounded-2xl border border-white/10 bg-[#0b1220] px-4 py-3 outline-none placeholder:text-white/30" placeholder="ご連絡先" />
+              <input className="rounded-2xl border border-white/10 bg-[#0b1220] px-4 py-3 outline-none placeholder:text-white/30" placeholder="ご利用日時" />
+              <input className="rounded-2xl border border-white/10 bg-[#0b1220] px-4 py-3 outline-none placeholder:text-white/30" placeholder="乗車地" />
+              <input className="rounded-2xl border border-white/10 bg-[#0b1220] px-4 py-3 outline-none placeholder:text-white/30" placeholder="目的地" />
+              <textarea className="min-h-[140px] rounded-2xl border border-white/10 bg-[#0b1220] px-4 py-3 outline-none placeholder:text-white/30" placeholder="ご要望・お見積り内容" />
+              <button type="button" className="mt-2 rounded-2xl bg-amber-400 px-6 py-3 font-semibold text-slate-900">
+                送信する
+              </button>
+            </form>
+          </div>
+
+          <div className="space-y-6">
+            <div className="rounded-[2rem] border border-white/10 bg-white/5 p-8">
+              <h3 className="text-xl font-semibold text-white">お電話</h3>
+              <p className="mt-3 text-white/70">お急ぎのご予約はお電話でも承ります。</p>
+              <a href="tel:00000000000" className="mt-6 inline-block text-2xl font-semibold text-amber-300">000-0000-0000</a>
+            </div>
+            <div className="rounded-[2rem] border border-white/10 bg-white/5 p-8">
+              <h3 className="text-xl font-semibold text-white">LINE予約</h3>
+              <p className="mt-3 leading-8 text-white/70">
+                公式LINEからのご相談・ご予約にも対応可能です。友だち追加ボタンを設置すると、スマホからの予約率が上がりやすくなります。
+              </p>
+              <button className="mt-6 rounded-2xl border border-emerald-400/30 bg-emerald-400/10 px-5 py-3 font-medium text-emerald-300">
+                LINEで相談する
+              </button>
+            </div>
+            <div className="rounded-[2rem] border border-white/10 bg-white/5 p-8">
+              <h3 className="text-xl font-semibold text-white">対応内容</h3>
+              <ul className="mt-4 space-y-3 text-white/70">
+                <li>・羽田・成田空港送迎</li>
+                <li>・都内移動 / 観光 / 貸切</li>
+                <li>・ビジネス利用 / 接待 / 通院</li>
+                <li>・English support available</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer className="border-t border-white/10 bg-[#0b1220]">
+        <div className="mx-auto flex max-w-7xl flex-col gap-3 px-6 py-8 text-sm text-white/50 md:flex-row md:items-center md:justify-between">
+          <div>© 山崎タクシー</div>
+          <div>東京個人タクシー / アルファード / 予約制対応</div>
+        </div>
+      </footer>
+    </div>
+  );
+}
